@@ -27,7 +27,22 @@ function constructorTareas(registro,tarea){
 
 
    localStorage.setItem(registro,JSON.stringify(identificador));
-        // Agregamos el contenido al enlace
+debugger;
+var miUl = document.getElementById('lista');
+nuevaTarea.id='li'+identificador.registro;
+nuevaTarea.innerText=identificador.tarea;
+miUl.appendChild(nuevaTarea);
+
+
+
+
+
+
+
+
+
+
+      /*  // Agregamos el contenido al enlace
         enlace.appendChild(contenido);
         // Le establecemos un atributo href
         enlace.setAttribute("href", "#");
@@ -43,8 +58,14 @@ function constructorTareas(registro,tarea){
                 this.parentNode.removeChild(this);
             });
         }
-
+*/
     };
+
+    for (var i = 0; i < localStorage.length; i++) {
+      console.log( localStorage.key(i) +" has value " + localStorage[localStorage.key(i)] );
+    }
+
+
     var comprobarInput = function(){
         tareaInput.className = "";
         teareaInput.setAttribute("placeholder", "Agrega tu tarea");
@@ -65,5 +86,5 @@ function constructorTareas(registro,tarea){
     // Borrando Elementos de la lista
     for (var i = 0; i < lista.children.length; i++) {
         lista.children[i].addEventListener("click", eleminarTarea);
-    }
+        }
 }());
